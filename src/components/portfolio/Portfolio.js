@@ -82,10 +82,10 @@ const Portfolio = () => {
           <Card
             key={index}
             type={card.type}
-            gridArea={card.gridArea}
+            gridarea={card.gridArea}
             to={card.path}
             // target="_blank"
-            iconActive={card.iconActive}
+            iconactive={card.iconActive}
           >
             <Styles.CentralPart>
               <Styles.LeftBorder
@@ -140,7 +140,7 @@ const CardImage = styled.div`
 `;
 const Card = styled(Link)`
   background-color: ${props => (props.type === "dark" ? "#A1A1A1" : "#D9D9D9")};
-  grid-area: ${props => props.gridArea};
+  grid-area: ${props => props.gridarea};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -150,7 +150,7 @@ const Card = styled(Link)`
   text-decoration: none;
   &:hover {
     ${CardImage} {
-      background-image: url(${props => props.iconActive});
+      background-image: url(${props => props.iconactive});
     }
   }
 `;

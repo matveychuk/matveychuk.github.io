@@ -42,9 +42,7 @@ const About = () => {
     <Styles.Wrapper>
       <Styles.Title>
         <NameWithBorders src={name_image} alt="Sasha Matveychuk name" />
-        <Styles.SectionTitle>
-          React JavaScript Developer
-        </Styles.SectionTitle>
+        <Styles.SectionTitle>React JavaScript Developer</Styles.SectionTitle>
         {/* <Styles.SectionText>
           Producing high quality responsive websites and exceptional user
           experience
@@ -64,7 +62,7 @@ const About = () => {
       </BioSection>
       <SkillsContainer>
         {skills.map((skill, index) => (
-          <Skill>
+          <Skill key={index}>
             <SkillHeader>
               <Styles.CentralPart>
                 <Styles.LeftBorder color="#ffffff" />
