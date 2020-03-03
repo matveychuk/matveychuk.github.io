@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import logo from "../../assets/images/logo.svg";
 import { BurgerMenu, Navbar } from "../common";
@@ -10,7 +11,10 @@ const navbarItems = ["about", "portfolio", "testimonials", "contacts"];
 const Header = () => {
   return (
     <Wrapper>
-      <Logo src={logo} alt="logo" />
+      <Link to="/about">
+        <Logo src={logo} alt="logo" />
+      </Link>
+
       <BurgerMenu item={navbarItems} />
       <NavContainer>
         <Navbar type="header" />
@@ -31,6 +35,7 @@ const Wrapper = styled.header`
   align-items: flex-start;
 `;
 const Logo = styled.img`
+  cursor: pointer;
   width: 100px;
   @media ${device.laptop} {
     width: 150px;
