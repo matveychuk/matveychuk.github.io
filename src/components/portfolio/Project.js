@@ -21,7 +21,7 @@ const projects = {
     url: "",
     comment: "",
     description:
-      "This project is related with accounting data analisys and building different reports based on that data. Initial data can be imported from standard accounting systems like QuickBooks or downloaded manually. Additional or adjusting entries can be made by user at any place through workflow.\n\nFor building tables and reports React-Table library was used. Server-side sorting and pagination were added via manual settings. Drilldown and multilevel extending rows help user to understand deeply nested data.\n\nDashboards are build with rich text editor Quill and drag-and-drop functionality for graphycs.\n\nDifferent types of charts and pivot tables are build with PlotlyJs library.\n\nDeep knowledge of accounting let me understand the tasks perfectly and help other team members to implement them."
+      "This project was related to accounting data analysis and building different reports based on that data. Initial data can be imported from standard accounting systems like QuickBooks or downloaded manually. Additional or adjusting entries can be made by user at any place through workflow.\n\nFor building tables and reports React-Table library was used. Server-side sorting and pagination were added via manual settings. Drilldown and multilevel extending rows help user to understand deeply nested data.\n\nDashboards are build with rich text editor Quill and drag-and-drop functionality for graphycs.\n\nDifferent types of charts and pivot tables are build with PlotlyJs library.\n\nDeep knowledge of accounting let me understand the tasks perfectly and help other team members to implement them."
   },
   gametree: {
     image: gametree,

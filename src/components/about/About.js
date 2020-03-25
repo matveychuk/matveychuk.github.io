@@ -56,7 +56,7 @@ const About = () => {
           <Styles.RightBorder color="#a1a1a1" />
         </Styles.CentralPart>
         <Description>
-          A unique combination of programming and finance skills allows my
+          A unique combination of programming and finance skills allow my
           clients to develop financial applications many times faster
         </Description>
       </BioSection>

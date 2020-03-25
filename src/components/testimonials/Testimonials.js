@@ -5,6 +5,12 @@ import { Testimonial } from "../common";
 const testimonials = [
   {
     text:
+      "I very much enjoyed working with Sasha. She can be counted on to independently drive forward the front end development and worked very well with the UI/UX designer. Her background in accounting was very helpful as she is one of the few developers that understood the subject matter and thus was able to make proactive suggestions about functionality and design. She can be trusted to be a self starter and only charge for time actually worked. I highly recommend her as an asset to your team and hope to work with her again in the future.",
+    author: "Marc Chiang",
+    company: "Managing Director, Transaction Advisory Services at Duff & Phelps with a focus on the technology sector"
+  },
+  {
+    text:
       "Sasha is literally one of the best people I have worked with in my life. She is reliable, detail-oriented, and organized. She's also a team player, cares about her work, and always has an enjoyable and pleasant demeanor.",
     author: "John Uke",
     company: "CEO @GameTree"
