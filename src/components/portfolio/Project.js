@@ -21,7 +21,14 @@ const projects = {
     url: "",
     comment: "",
     description:
-      "This project was related to accounting data analysis and building different reports based on that data. Initial data can be imported from standard accounting systems like QuickBooks or downloaded manually. Additional or adjusting entries can be made by user at any place through workflow.\n\nFor building tables and reports React-Table library was used. Server-side sorting and pagination were added via manual settings. Drilldown and multilevel extending rows help user to understand deeply nested data.\n\nDashboards are build with rich text editor Quill and drag-and-drop functionality for graphycs.\n\nDifferent types of charts and pivot tables are build with PlotlyJs library.\n\nDeep knowledge of accounting let me understand the tasks perfectly and help other team members to implement them."
+      "This project was related to accounting data analysis and building different reports based on that data. Initial data can be imported from standard accounting systems like QuickBooks or downloaded manually. Additional or adjusting entries can be made by user at any place through workflow.\n\nFor building tables and reports React-Table library was used. Server-side sorting and pagination were added via manual settings. Drilldown and multilevel extending rows help user to understand deeply nested data.\n\nDashboards are build with rich text editor Quill and drag-and-drop functionality for graphycs.\n\nDifferent types of charts and pivot tables are build with PlotlyJs library.\n\nDeep knowledge of accounting let me understand the tasks perfectly and help other team members to implement them.",
+    testimonials: {
+      text:
+        "I very much enjoyed working with Sasha. She can be counted on to independently drive forward the front end development and worked very well with the UI/UX designer. Her background in accounting was very helpful as she is one of the few developers that understood the subject matter and thus was able to make proactive suggestions about functionality and design. She can be trusted to be a self starter and only charge for time actually worked. I highly recommend her as an asset to your team and hope to work with her again in the future.",
+      author: "Marc Chiang",
+      company:
+        "Managing Director, Transaction Advisory Services at Duff & Phelps"
+    }
   },
   gametree: {
     image: gametree,
@@ -191,4 +198,3 @@ const StyledArrow = styled(Arrow)`
     fill: ${props => props.color};
   }
 `;
-
