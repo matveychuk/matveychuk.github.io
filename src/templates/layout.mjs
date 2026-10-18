@@ -3,6 +3,8 @@ import { escapeHtml as e, routeUrl } from '../lib/html.mjs';
 import { arrow } from './components.mjs';
 
 export function layout({ site, title, description = site.description, basePath, body, route }) {
+  const pageUrl = new URL(route.slice(1), site.url).href;
+  const imageUrl = new URL(site.image.src, site.url).href;
   return `<!doctype html>
 <html lang="${e(site.language)}">
 <head>
@@ -10,12 +12,25 @@ export function layout({ site, title, description = site.description, basePath, 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="${e(description)}">
   ${route === '/404.html' ? '<meta name="robots" content="noindex, follow">' : '<meta name="robots" content="index, follow">'}
-  <link rel="canonical" href="${e(new URL(route.slice(1), site.url).href)}">
+  <link rel="canonical" href="${e(pageUrl)}">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#1d232d">
   <meta property="og:title" content="${e(title)}">
   <meta property="og:description" content="${e(description)}">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="${e(pageUrl)}">
+  <meta property="og:site_name" content="${e(site.name)}">
+  <meta property="og:image" content="${e(imageUrl)}">
+  <meta property="og:image:secure_url" content="${e(imageUrl)}">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="${e(site.image.width)}">
+  <meta property="og:image:height" content="${e(site.image.height)}">
+  <meta property="og:image:alt" content="${e(site.image.alt)}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${e(title)}">
+  <meta name="twitter:description" content="${e(description)}">
+  <meta name="twitter:image" content="${e(imageUrl)}">
+  <meta name="twitter:image:alt" content="${e(site.image.alt)}">
   <title>${e(title)}</title>
   <link rel="icon" type="image/svg+xml" href="${e(routeUrl(basePath, '/assets/favicon.svg'))}">
   <link rel="stylesheet" href="${e(routeUrl(basePath, '/assets/fonts.css'))}">

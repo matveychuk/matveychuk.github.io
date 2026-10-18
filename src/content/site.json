@@ -37,5 +37,11 @@
     "text": "This page is not part of the current profile.",
     "linkLabel": "Back to home"
   },
-  "url": "https://matveychuk.github.io/"
+  "url": "https://matveychuk.github.io/",
+  "image": {
+    "src": "/assets/images/profile/social-card.jpg",
+    "width": 1200,
+    "height": 630,
+    "alt": "Sasha Matveychuk — software developer, business context and practical AI"
+  }
 }

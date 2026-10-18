@@ -31,6 +31,12 @@ for (const basePath of ['/', '/about/']) {
         assert.doesNotMatch(html, /<(form|iframe)\b|window\.openai|widgetState/i);
         assert.match(html, /<meta name="color-scheme" content="dark">/);
 
+        const openGraph = Object.fromEntries([...html.matchAll(/<meta property="(og:[^"]+)" content="([^"]*)">/g)].map(match => [match[1], match[2]]));
+        for (const key of ['og:title', 'og:description', 'og:url', 'og:image']) assert.ok(openGraph[key], `Missing ${key} in ${page.file}`);
+        assert.equal(openGraph['og:url'], new URL(page.route.slice(1), 'https://matveychuk.github.io/').href);
+        assert.equal(openGraph['og:image'], 'https://matveychuk.github.io/assets/images/profile/social-card.jpg');
+        assert.equal(openGraph['og:image:width'], '1200');
+        assert.equal(openGraph['og:image:height'], '630');
         documents.set(page.file, { html, ids });
       }
       for (const [filename, document] of documents) {
@@ -66,7 +72,7 @@ for (const basePath of ['/', '/about/']) {
       assert.equal(css.status, 200);
       assert.match(css.headers.get('content-type'), /^text\/css/);
       await css.text();
-      for (const [asset, mime] of [['assets/images/profile/sasha.jpg', 'image/jpeg'], ['assets/images/bake-again/step-questions-en.png', 'image/png'], ['assets/fonts/editorial-1.woff2', 'font/woff2'], ['assets/favicon.svg', 'image/svg+xml']]) {
+      for (const [asset, mime] of [['assets/images/profile/social-card.jpg', 'image/jpeg'], ['assets/images/profile/sasha.jpg', 'image/jpeg'], ['assets/images/bake-again/step-questions-en.png', 'image/png'], ['assets/fonts/editorial-1.woff2', 'font/woff2'], ['assets/favicon.svg', 'image/svg+xml']]) {
         const response = await fetch(`${origin}${basePath}${asset}`);
         assert.equal(response.status, 200, asset);
         assert.ok(response.headers.get('content-type').startsWith(mime), asset);
@@ -163,4 +169,27 @@ test('workflow navigation and triage structure remain complete', async () => {
   assert.throws(mutate(content => { content.home.caseStudies.push('missing'); }), /selected case/);
   assert.throws(mutate(content => { content.cases.find(item => item.kind === 'workflow').relatedCase = 'missing'; }), /related case/);
   assert.throws(mutate(content => { content.cases.find(item => item.routing).routing.branches.pop(); }), /three triage branches/);
+});
+
+// Validate the actual file as well as its tags: LinkedIn requires a large raster image.
+test('sharing image meets LinkedIn dimensions and file size limits', async () => {
+  const content = await loadContent();
+  const data = await readFile(new URL('../src/assets/images/profile/social-card.jpg', import.meta.url));
+  assert.ok(data.length < 5 * 1024 * 1024);
+  assert.equal(data.readUInt16BE(0), 0xffd8);
+  let dimensions;
+  for (let offset = 2; offset + 8 < data.length;) {
+    assert.equal(data[offset], 0xff);
+    const marker = data[offset + 1];
+    const length = data.readUInt16BE(offset + 2);
+    if ([0xc0, 0xc1, 0xc2].includes(marker)) {
+      dimensions = { width: data.readUInt16BE(offset + 7), height: data.readUInt16BE(offset + 5) };
+      break;
+    }
+    offset += 2 + length;
+  }
+  assert.ok(dimensions, 'JPEG must contain image dimensions');
+  assert.ok(dimensions.width >= 1200 && dimensions.height >= 627);
+  assert.equal(dimensions.width, content.site.image.width);
+  assert.equal(dimensions.height, content.site.image.height);
 });
