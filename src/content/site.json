@@ -1,0 +1,41 @@
+{
+  "language": "en",
+  "name": "Sasha Matveychuk",
+  "description": "Software development, business context and practical work with AI. Selected work and experience by Sasha Matveychuk.",
+  "navigation": [
+    {
+      "label": "Work",
+      "path": "/#work"
+    },
+    {
+      "label": "Experience",
+      "path": "/#experience"
+    },
+    {
+      "label": "Approach",
+      "path": "/#approach"
+    },
+    {
+      "label": "Connect",
+      "arrow": "up-right",
+      "path": "/#connect"
+    }
+  ],
+  "socials": [
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/oleksandra-matveychuk-b75b314/"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/matveychuk"
+    }
+  ],
+  "footer": "Software, business context & a practical curiosity.",
+  "notFound": {
+    "title": "Page not found",
+    "text": "This page is not part of the current profile.",
+    "linkLabel": "Back to home"
+  },
+  "url": "https://matveychuk.github.io/"
+}

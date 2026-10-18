@@ -1,0 +1,95 @@
+{
+  "title": "Sasha Matveychuk — software, business context & practical AI",
+  "description": "I'm Sasha, a software developer with a background in finance. I develop web and mobile products, use AI across development and automation, and evaluate how features are used after release.",
+  "eyebrow": "Software · Business context · Practical AI",
+  "heading": {
+    "plain": "Software developer",
+    "accent": "with a strong background in accounting and finance."
+  },
+  "intro": "I develop web and mobile products, use AI across development and automation, and evaluate how features are used after release.",
+  "focus": [
+    {
+      "label": "Currently",
+      "value": "TrustPointAI",
+      "url": "https://www.trustpoint.ai/"
+    },
+    {
+      "label": "Focus",
+      "value": "Product development & practical AI"
+    }
+  ],
+  "caseStudies": [
+    "incident-management",
+    "frustration-signals"
+  ],
+  "featuredCase": "bake-again",
+  "personalProject": {
+    "eyebrow": "Personal project",
+    "summary": "I turned years of gluten-free baking experience into an interactive product built around recipes I’ve tested myself. It brings together adjustable quantities, step-by-step cooking guidance and contextual AI assistance.",
+    "contribution": "Product and technical direction, design guidelines and implementation review. AI generated the application code through our collaboration.",
+    "footer": "Data modelling · AI integration · Human direction"
+  },
+  "background": {
+    "currentWork": {
+      "eyebrow": "Current work",
+      "company": "TrustPointAI",
+      "url": "https://www.trustpoint.ai/",
+      "domain": "Technology for construction and renovation lending",
+      "summary": "My main focus at TrustPointAI is frontend and mobile development, with AI-assisted backend work when a feature requires it.",
+      "ownership": "My scope also includes product evaluation, engineering automation and workflows across teams.",
+      "areas": [
+        {
+          "title": "Product development",
+          "text": "I compare design options, discuss trade-offs and turn agreed requirements into working features.",
+          "expertise": "Frontend · Mobile · Full-stack development"
+        },
+        {
+          "title": "Product use after release",
+          "text": "I connect usage patterns with user feedback to inform product improvements.",
+          "expertise": "Product analytics · Usability evaluation · Observability",
+          "caseSlug": "frustration-signals"
+        },
+        {
+          "title": "Engineering automation",
+          "text": "I automate backlog prioritisation, feature-flag maintenance and code and security checks.",
+          "expertise": "Engineering automation · Prioritisation · Human oversight"
+        },
+        {
+          "title": "Team workflows & incident management",
+          "text": "I connect reporting, responsibility and follow-up across support, customer success, engineering and delivery.",
+          "expertise": "Process ownership · Workflow design · System integration",
+          "caseSlug": "incident-management"
+        }
+      ]
+    },
+    "history": [
+      {
+        "period": "Selected work",
+        "title": "Financial analytics & GameTree",
+        "text": "Financial interfaces, web development and contributions within a product team."
+      },
+      {
+        "period": "Foundation",
+        "title": "Accounting & finance",
+        "text": "International accounting, reporting and the business processes behind the numbers."
+      }
+    ]
+  },
+  "approach": {
+    "eyebrow": "How I work",
+    "steps": [
+      {
+        "title": "Clarify the expected behaviour",
+        "text": "I turn discussions and observations into specific requirements and acceptance criteria."
+      },
+      {
+        "title": "Define the limits of automation",
+        "text": "I decide which actions can run automatically and which need human review before proceeding."
+      },
+      {
+        "title": "Evaluate after release",
+        "text": "I assess how a feature is used, where users encounter friction and whether it delivers the intended value."
+      }
+    ]
+  }
+}

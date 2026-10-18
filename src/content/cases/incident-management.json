@@ -1,0 +1,87 @@
+{
+  "kind": "workflow",
+  "slug": "incident-management",
+  "title": "Incident management",
+  "subtitle": "Built around the team.",
+  "description": "A custom incident management system connecting Slack workflows, AI-assisted triage, on-call coordination and RCA documentation.",
+  "eyebrow": "TrustPointAI · Team operations",
+  "summary": "Ready-made tools didn’t match how our support, customer success, engineering and delivery teams worked together. I designed, developed and rolled out a custom incident management system.",
+  "card": {
+    "eyebrow": "TrustPointAI · Team operations",
+    "title": "Incident management built around the team",
+    "summary": "The team needed an incident process that matched how people actually worked together. I designed, built and rolled out a custom system connecting reporting, AI-assisted investigation, on-call coordination and follow-up."
+  },
+  "facts": [
+    {
+      "label": "My contribution",
+      "text": "System design, development & rollout"
+    },
+    {
+      "label": "Built around",
+      "text": "Slack workflows & connected services"
+    },
+    {
+      "label": "In practice",
+      "text": "In use by the team"
+    }
+  ],
+  "flow": {
+    "eyebrow": "How a request moves through the process",
+    "title": "From a report to the right response.",
+    "entry": {
+      "title": "Issue or question",
+      "text": "Report and discuss in Slack."
+    },
+    "triage": {
+      "title": "Clarify & investigate",
+      "text": "AI prepares context; people assess the next step."
+    },
+    "steps": [
+      {
+        "title": "Resolve in Slack",
+        "text": "Clarify the question or resolve the issue without incident escalation.",
+        "label": "Resolution shared with the team"
+      },
+      {
+        "title": "Escalate to an incident",
+        "text": "The on-call engineer decides when incident coordination is needed.",
+        "label": "Coordination · RCA draft · team review"
+      }
+    ],
+    "footnote": "The on-call engineer makes the escalation decision; the team reviews the RCA draft."
+  },
+  "startingPoint": {
+    "text": "The goal was to keep Slack as the shared place where teams could discuss issues and questions, follow progress and see the outcome."
+  },
+  "details": {
+    "items": [
+      {
+        "title": "Support questions as well as incidents",
+        "text": "I built separate paths for questions, clarification and investigation, so a report can be resolved without triggering full incident coordination.",
+        "supporting": "AI-assisted triage draws on tracking systems and logs to prepare context for the responder."
+      },
+      {
+        "title": "Keep responsibility aligned",
+        "text": "I connected the calendar, Slack and Instatus so on-call assignments stay aligned through shift changes and temporary cover."
+      },
+      {
+        "title": "Carry context into follow-up",
+        "text": "The system turns the incident conversation and its threads into a root cause analysis (RCA) draft in Confluence, then returns the link to Slack for the team to verify and complete."
+      }
+    ]
+  },
+  "outcome": {
+    "eyebrow": "The result",
+    "heading": {
+      "plain": "A shared place",
+      "accent": "to follow the work."
+    },
+    "text": "The system is in use by the team. Teams discuss issues and questions in Slack, follow progress and see the outcome, with links to the resulting analysis."
+  },
+  "relatedCase": "frustration-signals",
+  "technical": {
+    "title": "Technical details",
+    "text": "The workflow app uses the Deno Slack SDK. Scheduled synchronization keeps on-call assignments aligned; webhooks connect external monitoring services to the response process.",
+    "stack": "Deno Slack SDK · Calendar integration · Instatus · Confluence"
+  }
+}

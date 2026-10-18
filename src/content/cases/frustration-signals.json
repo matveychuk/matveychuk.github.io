@@ -1,0 +1,107 @@
+{
+  "kind": "workflow",
+  "slug": "frustration-signals",
+  "title": "Understanding product use after release",
+  "subtitle": "Usage, feedback & follow-up.",
+  "description": "Feature-adoption analysis and friction monitoring: from planned instrumentation and production data to user feedback, follow-up work and continued observation.",
+  "eyebrow": "TrustPointAI · Product experience",
+  "summary": "At TrustPointAI, I combine adoption analysis with friction monitoring to understand how a released feature works for users and what needs to change.",
+  "card": {
+    "eyebrow": "TrustPointAI · Product experience",
+    "title": "Understanding product use after release",
+    "summary": "I connect usage data and user feedback to guide product improvements, including the move to left navigation. I also built a workflow that turns Datadog frustration signals into assigned follow-up work."
+  },
+  "facts": [
+    {
+      "label": "My contribution",
+      "text": "Usage analysis, dashboards & workflow automation"
+    },
+    {
+      "label": "Focus",
+      "text": "Feature adoption & product usability"
+    },
+    {
+      "label": "In practice",
+      "text": "Feedback-informed changes · Daily monitoring"
+    }
+  ],
+  "signals": {
+    "note": "Datadog rage clicks, dead clicks and error clicks provide starting points for investigation. They need context before they can explain a usability problem.",
+    "url": "https://docs.datadoghq.com/real_user_monitoring/application_monitoring/browser/frustration_signals/"
+  },
+  "routing": {
+    "branches": [
+      {
+        "label": "Act",
+        "title": "Clear error",
+        "text": "Create a ticket automatically and assign responsibility using context and feature ownership in the codebase.",
+        "outcome": "Automatic ticket + owner"
+      },
+      {
+        "label": "Assess",
+        "title": "Needs judgment",
+        "text": "Bring the finding to discussion. A person evaluates it before a ticket is created and assigned.",
+        "outcome": "Human assessment first"
+      },
+      {
+        "label": "Observe",
+        "title": "Below the attention threshold",
+        "text": "Keep the finding in the history for trend analysis without requiring immediate attention.",
+        "outcome": "Recorded for trends"
+      }
+    ]
+  },
+  "details": {
+    "items": [
+      {
+        "title": "Understand feature adoption",
+        "eyebrow": "Instrumentation & analysis",
+        "text": "I build dashboards using production database and Datadog data. The events needed for analysis are planned and implemented during development, making it possible to examine adoption and user choices after release.",
+        "example": {
+          "title": "From top navigation to a left sidebar",
+          "intro": "We introduced left navigation with an option to return to the previous top navigation. Because this was a substantial interface change, we followed the transition over an extended period.",
+          "steps": [
+            {
+              "title": "Observe the transition",
+              "text": "We tracked who switched to the new navigation and who returned to the old one. I also examined how screen size related to that choice."
+            },
+            {
+              "title": "Ask about the experience",
+              "text": "Users who returned to the old navigation received a Refiner survey asking what did not work for them in the new approach."
+            },
+            {
+              "title": "Improve before the full rollout",
+              "text": "The team made improvements based on the feedback, then moved all users to the left-navigation experience."
+            }
+          ]
+        }
+      },
+      {
+        "title": "Investigate friction and decide what needs action",
+        "eyebrow": "Signals & decisions",
+        "text": "I built an automation that analyzes and groups Datadog frustration signals, then routes findings to action, human assessment or continued observation.",
+        "supporting": "A person reviews and confirms selected tickets before sending them to an AI agent for fixes."
+      },
+      {
+        "title": "Follow through after a change",
+        "eyebrow": "Review & continued monitoring",
+        "text": "Previously identified and fixed signals stay in the monitoring history. The automation checks them every day for recurrence and trends.",
+        "supporting": "Earlier findings remain part of the analysis, even when the latest run is quiet."
+      }
+    ]
+  },
+  "outcome": {
+    "eyebrow": "The result",
+    "heading": {
+      "plain": "Evidence for changes.",
+      "accent": "Follow-up that continues."
+    },
+    "text": "Usage analysis and feedback informed navigation improvements before the team moved all users to the left sidebar. The frustration-signal workflow adds assigned follow-up work and daily checks for recurring issues."
+  },
+  "relatedCase": "bake-again",
+  "technical": {
+    "title": "Technical details",
+    "text": "Production queries and instrumented events supply adoption dashboards; Refiner adds targeted feedback. Ticket assignment uses feature ownership in the codebase, and monitoring retains findings across runs.",
+    "stack": "Event instrumentation · Database analysis · Datadog · Refiner · Engineering automation"
+  }
+}

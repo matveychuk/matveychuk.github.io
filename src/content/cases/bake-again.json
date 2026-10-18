@@ -1,0 +1,113 @@
+{
+  "slug": "bake-again",
+  "title": "Bake Again",
+  "description": "Turning tested gluten-free recipes into an interactive cooking product through domain knowledge, product direction and AI-assisted development.",
+  "eyebrow": "Personal project",
+  "subtitle": "From tested recipes to guided cooking.",
+  "summary": "Bake Again grew out of years of gluten-free baking for my family. I wanted to make recipes I’d tested myself useful to others—not only as instructions to read, but as practical guidance while cooking.",
+  "liveUrl": "https://bakeagain.com/en",
+  "role": {
+    "title": "My contribution",
+    "text": "I brought the baking knowledge, defined the product and recipe model, guided the design and reviewed the implementation. AI generated the application code through this iterative collaboration."
+  },
+  "decisions": [
+    {
+      "id": "model",
+      "title": "Recipes that adapt",
+      "text": "Changing a recipe means more than multiplying every ingredient. I shaped a shared model for quantities, components and cooking steps, so one adjustment carries through the recipe and Cook Mode.",
+      "example": "At half the base quantity, the recipe calculates 1.5 eggs and flags the amount for the cook to check.",
+      "states": [
+        {
+          "title": "Tested",
+          "text": "The exact version was baked."
+        },
+        {
+          "title": "Calculated",
+          "text": "Quantities were adjusted mathematically."
+        },
+        {
+          "title": "Suggested",
+          "text": "The proposed change has not been bake-tested."
+        }
+      ],
+      "image": {
+        "src": "/assets/images/bake-again/adjust-recipe-en.png",
+        "width": 2602,
+        "height": 1540,
+        "alt": "Adjust recipe at half the base quantity, with calculated ingredients and a reminder to check fractional eggs.",
+        "caption": "A half batch recalculates ingredients and flags whole items that need a decision."
+      }
+    },
+    {
+      "id": "cooking",
+      "title": "Guidance while cooking",
+      "text": "I wanted the recipe to remain useful once someone started baking. Cook Mode brings the current instructions, relevant ingredients, photographs and readiness checkpoints into one view.",
+      "example": "For the mixing step, the cook can compare the dough with photographs and use a readiness checkpoint to decide when to stop.",
+      "image": {
+        "src": "/assets/images/bake-again/cook-guidance-en.png",
+        "width": 2604,
+        "height": 1638,
+        "alt": "Cook Mode showing the mixing step, its ingredients, a readiness checkpoint and two preparation photographs.",
+        "caption": "The current step brings instructions, ingredients and visual guidance together."
+      },
+      "details": [
+        {
+          "title": "Timing follows the process",
+          "text": "The model distinguishes active work from elapsed time and connects preparation, waiting and cooking phases to specific steps. This lets different recipes share a structure while keeping their own sequence and timing."
+        }
+      ]
+    },
+    {
+      "id": "assistant",
+      "title": "Help in context",
+      "text": "Common questions should be easy to answer without interrupting the cooking task. I separated prepared explanations from custom AI questions, with both grounded in the recipe and current step.",
+      "paths": [
+        {
+          "title": "Prepared answers",
+          "text": "I used AI to prepare common questions in advance. Answers come from reviewed text and recipe guidance, adjusted to the selected configuration, without a new model request."
+        },
+        {
+          "title": "Custom AI questions",
+          "text": "New questions use the recipe version, selected quantities, language and current step as context. Responses are checked against that context; AI cannot mark a recipe as Tested."
+        }
+      ],
+      "note": "The screenshot shows a prepared recipe answer.",
+      "image": {
+        "src": "/assets/images/bake-again/step-questions-en.png",
+        "width": 950,
+        "height": 1498,
+        "alt": "Full Step questions panel showing a prepared answer, related question and separate field for a custom AI question.",
+        "caption": "Prepared recipe guidance and custom AI questions have distinct places in the interface."
+      }
+    }
+  ],
+  "review": {
+    "title": "Direction through review",
+    "text": "During implementation review, I asked to replace browser-import and manual-sync controls with a simpler flow: offer sign-in when someone wants to save a recipe or note."
+  },
+  "technical": {
+    "title": "Technical details",
+    "text": "A shared recipe model supports Ukrainian, English and Spanish. Reader accounts, newsletter consent and product analytics have separate responsibilities.",
+    "verification": "Data checks, interface review and deterministic assistant evaluations cover the application’s rules and safeguards. Live AI answer quality requires its own evaluation.",
+    "stack": [
+      {
+        "label": "Application",
+        "text": "React · TypeScript · vinext / Vite"
+      },
+      {
+        "label": "AI & limits",
+        "text": "OpenAI Responses API · Turnstile · D1"
+      },
+      {
+        "label": "Services",
+        "text": "Supabase · PostgreSQL · Brevo · Umami"
+      }
+    ],
+    "controls": "Custom AI requests have limits on input size, response length, concurrency and timeouts. A shared quota service reserves a maximum cost before generation; requests are rejected when that service is unavailable. Structured responses and their references are validated against the recipe context."
+  },
+  "outcome": {
+    "title": "The result",
+    "text": "Tested gluten-free recipes are now an interactive collection: cooks can adjust quantities, follow each step and get help in context."
+  },
+  "relatedCase": "incident-management"
+}
