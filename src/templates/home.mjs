@@ -32,7 +32,7 @@ export function homePage({ home, cases }, basePath) {
     </div>
     <div class="hero-profile">
       <figure class="hero-portrait">
-        <img src="${e(routeUrl(basePath, '/assets/images/profile/portrait.jpg'))}" width="300" height="450" alt="Sasha speaking and gesturing during a group discussion" fetchpriority="high">
+        <img src="${e(routeUrl(basePath, '/assets/images/profile/sasha.jpg'))}" width="270" height="405" alt="Sasha speaking and gesturing during a group discussion" fetchpriority="high">
       </figure>
       <aside class="hero-note" aria-label="Current focus">
       ${home.focus.map(item => `<div class="note-row"><span class="eyebrow">${e(item.label)}</span><strong>${item.url ? externalLink(item.url, item.value, 'company-link') : e(item.value)}</strong></div>`).join('\n')}

@@ -66,7 +66,7 @@ for (const basePath of ['/', '/about/']) {
       assert.equal(css.status, 200);
       assert.match(css.headers.get('content-type'), /^text\/css/);
       await css.text();
-      for (const [asset, mime] of [['assets/images/profile/portrait.jpg', 'image/jpeg'], ['assets/images/bake-again/step-questions-en.png', 'image/png'], ['assets/fonts/editorial-1.woff2', 'font/woff2'], ['assets/favicon.svg', 'image/svg+xml']]) {
+      for (const [asset, mime] of [['assets/images/profile/sasha.jpg', 'image/jpeg'], ['assets/images/bake-again/step-questions-en.png', 'image/png'], ['assets/fonts/editorial-1.woff2', 'font/woff2'], ['assets/favicon.svg', 'image/svg+xml']]) {
         const response = await fetch(`${origin}${basePath}${asset}`);
         assert.equal(response.status, 200, asset);
         assert.ok(response.headers.get('content-type').startsWith(mime), asset);
